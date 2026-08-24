@@ -16,10 +16,13 @@ import ProvostDashboard from "../pages/provost/ProvostDashboard";
 import StudentVisitors from "../pages/student/StudentVisitors";
 import AdminVisitors from "../pages/admin/AdminVisitors";
 
+import StudentEvents from "../pages/student/StudentEvents";
+import AdminEvents from "../pages/admin/AdminEvents";
+
 export default function AppRoutes() {
   return (
     <Routes>
-    
+      {/* public routes */}
       <Route path="/login" element={<LoginPage />} />
       <Route path="/register" element={<RegisterPage />} />
 
@@ -34,7 +37,8 @@ export default function AppRoutes() {
       >
         <Route index element={<StudentDashboard />} />
         <Route path="visitors" element={<StudentVisitors />} />
-        {/* Part 5 adds: complaints, Part 8 adds: dining/notices/events, etc. */}
+        <Route path="events" element={<StudentEvents />} />
+        {/* Part 5 adds: complaints, Part 8 adds: dining/notices, etc. */}
       </Route>
 
       {/* admin routes */}
@@ -48,6 +52,7 @@ export default function AppRoutes() {
       >
         <Route index element={<AdminDashboard />} />
         <Route path="visitors" element={<AdminVisitors />} />
+        <Route path="events" element={<AdminEvents />} />
         {/* Part 6+ adds nested admin pages here */}
       </Route>
 

@@ -19,6 +19,13 @@ import AdminVisitors from "../pages/admin/AdminVisitors";
 import StudentEvents from "../pages/student/StudentEvents";
 import AdminEvents from "../pages/admin/AdminEvents";
 
+import NoticesPage from "../pages/student/NoticesPage";
+import ManageNotices from "../pages/admin/ManageNotices";
+
+import DiningMenuPage from "../pages/student/DiningMenuPage";
+import ManageDining from "../pages/admin/ManageDining";
+
+
 export default function AppRoutes() {
   return (
     <Routes>
@@ -38,7 +45,11 @@ export default function AppRoutes() {
         <Route index element={<StudentDashboard />} />
         <Route path="visitors" element={<StudentVisitors />} />
         <Route path="events" element={<StudentEvents />} />
+
         {/* Part 5 adds: complaints, Part 8 adds: dining/notices, etc. */}
+        <Route path="notices" element={<NoticesPage />} />
+        <Route path="dining" element={<DiningMenuPage />} />
+       
       </Route>
 
       {/* admin routes */}
@@ -53,6 +64,9 @@ export default function AppRoutes() {
         <Route index element={<AdminDashboard />} />
         <Route path="visitors" element={<AdminVisitors />} />
         <Route path="events" element={<AdminEvents />} />
+        <Route path="notices" element={<ManageNotices />} />
+        <Route path="dining" element={<ManageDining />} />
+        
         {/* Part 6+ adds nested admin pages here */}
       </Route>
 
